@@ -19,6 +19,10 @@ public class SimpleQuizAverage
 		this.score[index] = value;
 	}
 	
+	public int getScoreArrayLenght()
+	{
+		return this.score.length;
+	}
 	public double getAverage()
 	{
 		
