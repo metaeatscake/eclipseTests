@@ -9,6 +9,7 @@ public class SimpleQuizAverage
 	{
 		this.score = new double[4];
 	}
+	
 	public SimpleQuizAverage(int arrayLength)
 	{
 		this.score = new double[arrayLength];
@@ -19,13 +20,22 @@ public class SimpleQuizAverage
 		this.score[index] = value;
 	}
 	
-	public int getScoreArrayLenght()
+	public int getScoreArrayLength()
 	{
 		return this.score.length;
 	}
-	public double getAverage()
+	
+	public double computeAverage()
 	{
+		double sum = 0;
 		
-		return average;
+		for(int i = 0; i < getScoreArrayLength(); i++)
+		{
+			sum += this.score[i];
+		}
+		
+		this.average = sum / getScoreArrayLength();
+		
+		return this.average;
 	}
 }
