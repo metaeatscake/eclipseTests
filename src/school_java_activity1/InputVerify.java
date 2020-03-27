@@ -2,6 +2,11 @@ package school_java_activity1;
 
 public class InputVerify
 {
+	private String tempInput;
+	
+	public void setTemp(String tempInput) {this.tempInput = tempInput;}
+	public String getTemp() {return this.tempInput;}
+	
 	public static boolean parsableToDouble(String input)
 	{
 		boolean valid = true;
