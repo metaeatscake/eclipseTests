@@ -22,4 +22,21 @@ public class InputVerify
 		
 		return valid;
 	}
+	
+	public static boolean parsableToInt(String input)
+	{
+		boolean valid = true;
+		int num = 0;
+		try {
+			num = Integer.parseInt(input);
+		} catch(NumberFormatException e){
+			valid =  false;
+		}
+		
+		// redundant thing just to remove warning
+		Integer.toString(num);
+		
+		return valid;
+	}
+	
 }

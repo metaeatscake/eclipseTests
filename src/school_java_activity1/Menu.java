@@ -46,8 +46,4 @@ public class Menu
 		System.out.println("=======================\n");
 	}
 	
-	public static void printInvalidStop()
-	{
-		System.out.println("\nInvalid Input Detected. Process stopped.\n");
-	}
 }
