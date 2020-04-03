@@ -31,7 +31,7 @@ public class GradeAndRemark
 	{
 		return (this.midtermExamScore * 0.4) + (this.finalExamScore * 0.6);
 	}
-	
+
 	public String getRemark()
 	{
 		String output = "";
