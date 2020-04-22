@@ -43,7 +43,7 @@ public class CourseEnrolleeRemark
 		
 		for(int i = 0; i < remarkRange.length; i++)
 		{
-			if(this.enrolleeCount <= remarkRange[i])
+			if(this.enrolleeCount <= remarkRange[i] && this.enrolleeCount >= 0)
 			{
 				output = remarks[i];
 				belowEleven = true;
