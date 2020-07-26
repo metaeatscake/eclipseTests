@@ -45,11 +45,25 @@ public class Main {
 				
 			} catch(NumberFormatException e)
 			{
-				System.err.println("\nNot a valid double. Please try again");
+				System.err.println("\nNot a valid double number. Please try again");
 			}
 		}
 		
 		return testVar;
+	}
+	
+	public void mainMenu()
+	{
+		String[] menuNames = new String[] 
+				{
+						"Highest Number among 3 values",
+						"Employee Net Pay",
+						"Grade and Remark",
+						"Course Enrollee number and Remark",
+						"Employee Separation Pay"
+				};
+		
+		
 	}
 	
 	public static void main(String args[]) 
@@ -57,12 +71,13 @@ public class Main {
 		HighestNumber hn = new HighestNumber();
 		EmployeeOvertimePay eop = new EmployeeOvertimePay();
 		GradeAndRemark gar = new GradeAndRemark();
-		CourseEnrolleeRemark cor = new CourseEnrolleeRemark();
+		CourseEnrolleeRemark cer = new CourseEnrolleeRemark();
 		EmployeeSeparationPay esp = new EmployeeSeparationPay();
 		
 		while(!menuChoice.equals("6"))
 		{
 			System.out.println("\n");
+			
 		}
 	}
 }
