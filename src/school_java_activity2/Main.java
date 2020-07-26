@@ -52,7 +52,7 @@ public class Main {
 		return testVar;
 	}
 	
-	public void mainMenu()
+	public static void mainMenu()
 	{
 		String[] menuNames = new String[] 
 				{
@@ -60,10 +60,18 @@ public class Main {
 						"Employee Net Pay",
 						"Grade and Remark",
 						"Course Enrollee number and Remark",
-						"Employee Separation Pay"
+						"Employee Separation Pay",
+						"Exit"
 				};
 		
+		System.out.println("\n\n=====Activity 2 Menu=====");
 		
+		for(int i = 0; i < menuNames.length; i++)
+		{
+			System.out.println("[" + (i+1) + "] " + menuNames[i]);
+		}
+		
+		System.out.print("\nEnter Choice: ");
 	}
 	
 	public static void main(String args[]) 
@@ -76,7 +84,73 @@ public class Main {
 		
 		while(!menuChoice.equals("6"))
 		{
-			System.out.println("\n");
+			
+			mainMenu();
+			menuChoice = sc.nextLine();
+			
+			switch(menuChoice)
+			{
+			case "1":
+				
+				System.out.println("\nSelected Problem 1 - Highest number among 3 numbers");
+				hn.clearValues();
+				
+				try 
+				{
+					for(int i = 0; i < hn.getArraySize(); i++)
+					{
+						System.out.print("\nEnter a value for num [" + (i+1) + "]: ");
+						hn.addValue(i, Integer.parseInt(sc.nextLine()));
+					}
+					
+					System.out.println("\nHighest Value: " + hn.getHighest());
+					System.out.println("\nPress Enter to continue...");
+					sc.nextLine();
+					
+				} catch(NumberFormatException e)
+				{
+					System.out.println("\nInvalid Input Detected. Returning to main menu...");
+				}
+				
+				break;
+				
+			case "2":
+				
+				System.out.println("\nSelected Problem 2 - Employee Net Pay");
+				
+				try 
+				{
+					
+				} catch(NumberFormatException e)
+				{
+					
+				}
+				
+				break;
+				
+			case "3":
+				
+				break;
+				
+			case "4":
+				
+				break;
+				
+			case "5":
+				
+				break;
+				
+			case "6":
+				
+				break;
+				
+			default:
+				
+				System.out.println("\nInvalid Input. Press Enter to continue.");
+				sc.nextLine();
+				
+				break;
+			}
 			
 		}
 	}

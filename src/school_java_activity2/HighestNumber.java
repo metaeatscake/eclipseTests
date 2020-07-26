@@ -25,4 +25,17 @@ public class HighestNumber
 		Arrays.sort(array);
 		return this.array[array.length-1];
 	}
+	
+	public int getArraySize()
+	{
+		return this.array.length;
+	}
+	
+	public void clearValues()
+	{
+		for(int i = 0; i < array.length; i++)
+		{
+			this.array[i] = 0;
+		}
+	}
 }
