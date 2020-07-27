@@ -7,51 +7,6 @@ public class Main {
 	public static Scanner sc = new Scanner(System.in);
 	public static String menuChoice = "";
 	
-	public static int inputInt(Scanner input, String varName)
-	{
-		boolean askForInput = true;
-		int testVar = 0;
-		
-		while(askForInput)
-		{
-			try
-			{
-				
-				System.out.print("\nEnter " + varName + ": ");
-				testVar = Integer.parseInt(input.nextLine());
-				askForInput = false;
-				
-			} catch (NumberFormatException e)
-			{
-				System.err.println("\nNot a valid integer. Please try again.");
-			}
-		}
-			
-		return testVar;
-	}
-	
-	public static double inputDouble(Scanner input, String varName)
-	{
-		boolean askForInput = true;
-		double testVar = 0;
-		
-		while(askForInput)
-		{
-			try
-			{
-				System.out.print("\nEnter " + varName + ": ");
-				testVar = Double.parseDouble(input.nextLine());
-				askForInput = false;
-				
-			} catch(NumberFormatException e)
-			{
-				System.err.println("\nNot a valid double number. Please try again");
-			}
-		}
-		
-		return testVar;
-	}
-	
 	public static void mainMenu()
 	{
 		String[] menuNames = new String[] 
@@ -100,10 +55,11 @@ public class Main {
 					for(int i = 0; i < hn.getArraySize(); i++)
 					{
 						System.out.print("\nEnter a value for num [" + (i+1) + "]: ");
-						hn.addValue(i, Integer.parseInt(sc.nextLine()));
+						hn.addValue(i, Double.parseDouble(sc.nextLine()));
 					}
 					
 					System.out.println("\nHighest Value: " + hn.getHighest());
+					
 					System.out.println("\nPress Enter to continue...");
 					sc.nextLine();
 					
@@ -120,27 +76,104 @@ public class Main {
 				
 				try 
 				{
+					System.out.print("\nEnter amount of hours: ");
+					eop.setHours(Double.parseDouble(sc.nextLine()));
+					System.out.print("Enter hour rate: ");
+					eop.setHourRate(Double.parseDouble(sc.nextLine()));
+					System.out.print("Enter deductions: ");
+					eop.setDeductions(Double.parseDouble(sc.nextLine()));
+					
+					System.out.println("\nNet Pay: " + eop.getNetPay());
+					
+					System.out.println("\nPress Enter to continue...");
+					sc.nextLine();
 					
 				} catch(NumberFormatException e)
 				{
-					
+					System.out.println("\nInvalid Input Detected. Returning to main menu...");
 				}
 				
 				break;
 				
 			case "3":
 				
+				System.out.println("\nSelected Problem 3 - Grade and Remark");
+				
+				try 
+				{
+					System.out.print("\nEnter miderm exam score: ");
+					gar.setMidtermExamScore(Double.parseDouble(sc.nextLine()));
+					System.out.print("Enter final exam score: ");
+					gar.setFinalExamScore(Double.parseDouble(sc.nextLine()));
+					
+					System.out.println("\nFinal Grade: " + gar.getGrade());
+					System.out.println("Remark: " + gar.getRemark());
+					
+					System.out.println("\nPress Enter to continue...");
+					sc.nextLine();
+					
+				} catch (NumberFormatException e)
+				{
+					System.out.println("\nInvalid Input Detected. Returning to main menu...");
+				}
+				
 				break;
 				
 			case "4":
 				
+				System.out.println("\nSelected Problem 4 - Course Enrollee number and Remark");
+				
+				try 
+				{
+					System.out.print("\nEnter Course title: ");
+					cer.setCourseTitle(sc.nextLine());
+					System.out.print("Enter number of enrollees: ");
+					cer.setEnrolleeCount(Integer.parseInt(sc.nextLine()));
+					
+					System.out.println("\nEnrollee Count: " + cer.getEnrolleeCount());
+					System.out.println("Remark: " + cer.getRemark());
+					
+					System.out.println("\nPress Enter to continue...");
+					sc.nextLine();
+					
+				} catch (NumberFormatException e)
+				{
+					System.out.println("\nInvalid Input Detected. Returning to main menu...");
+				}
+				
 				break;
 				
 			case "5":
+
+				System.out.println("\nSelected Problem 5 - Employee Separation Pay");
+				
+				try 
+				{
+					System.out.print("\nEnter name: ");
+					esp.setEmployeeName(sc.nextLine());
+					System.out.print("Enter basic salary: ");
+					esp.setBasicSalary(Double.parseDouble(sc.nextLine()));
+					System.out.print("Enter service time (in years): ");
+					esp.setServiceTime(Double.parseDouble(sc.nextLine()));
+					
+					System.out.println("\nEmployee Name: " + esp.getEmployeeName());
+					System.out.println("Basic Salary: " + esp.getBasicSalary());
+					System.out.println("Service Time: " + esp.getServiceTime());
+					System.out.println("Separation Pay: " + esp.getSeparationPay());
+					
+					System.out.println("\nPress Enter to continue...");
+					sc.nextLine();
+					
+				} catch (NumberFormatException e)
+				{
+					System.out.println("\nInvalid Input Detected. Returning to main menu...");
+				}
 				
 				break;
 				
 			case "6":
+				
+				System.out.println("\nGoodbye");
 				
 				break;
 				

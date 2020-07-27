@@ -37,12 +37,12 @@ public class EmployeeOvertimePay
 			
 		else if(this.hours > 40 && this.hours <= 50)
 		{
-			return ((this.hourRate * 40) + ((this.hours - 40) * 1.5)) - this.deductions;
+			return ((this.hourRate * 40) + ((this.hours - 40) * 1.5) * this.hourRate) - this.deductions;
 		}
 		
 		else if(this.hours > 50)
 		{
-			return ((this.hourRate * 40) + (this.hourRate * 10 * 1.5) + ((this.hours - 50) * 2)) - this.deductions;
+			return ((this.hourRate * 40) + (this.hourRate * 10 * 1.5) + ((this.hours - 50) * 2) * this.hourRate) - this.deductions;
 		}
 		
 		else 

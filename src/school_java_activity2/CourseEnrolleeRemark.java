@@ -7,7 +7,7 @@ public class CourseEnrolleeRemark
 	
 	private String[] remarks = new String[] 
 	{
-		"Dissolved", "Open", "Closed", "Invalid"
+		"Dissolved", "Open", "Closed"
 	};
 	private int[] remarkRange = new int[]
 	{
@@ -38,7 +38,7 @@ public class CourseEnrolleeRemark
 	
 	public String getRemark()
 	{
-		boolean belowEleven = false;
+		boolean valid = false;
 		String output = "";
 		
 		for(int i = 0; i < remarkRange.length; i++)
@@ -46,14 +46,14 @@ public class CourseEnrolleeRemark
 			if(this.enrolleeCount <= remarkRange[i] && this.enrolleeCount >= 0)
 			{
 				output = remarks[i];
-				belowEleven = true;
+				valid = true;
 				break;
 			}
 		}
 		
-		if(!belowEleven) 
+		if(!valid)
 		{
-			output = remarks[remarks.length - 1];
+			output = "Invalid (Input Over 10 or Below 0)";
 		}
 		
 		return output;

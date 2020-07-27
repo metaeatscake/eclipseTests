@@ -29,7 +29,14 @@ public class GradeAndRemark
 	
 	public double getGrade()
 	{
-		return (this.midtermExamScore * 0.4) + (this.finalExamScore * 0.6);
+		if(this.midtermExamScore >= 0 && this.finalExamScore >= 0) 
+		{
+			return (this.midtermExamScore * 0.4) + (this.finalExamScore * 0.6);
+		}
+		
+		// If a negative is given, consider the operation as invalid.
+		else return -1;
+		
 	}
 
 	public String getRemark()
@@ -37,7 +44,12 @@ public class GradeAndRemark
 		String output = "";
 		for(int i = 0; i < remarks.length; i++)
 		{
-			if(getGrade() <= remarkRange[i])
+			if(getGrade() < 0)
+			{
+				output = "Invalid (Negative Score Input)";
+				break;
+			}
+			else if(getGrade() <= remarkRange[i])
 			{
 				output = remarks[i];
 				break;
